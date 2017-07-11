@@ -1,0 +1,15 @@
+/.idea
+
+/node_modules
+
+/res/messages/src
+
+/.vscode
+/examples/node_modules
+npm-debug.log
+index.html
+/test/peerDependencies/node_modules
+/examples/npm-debug.log
+/index.html
+examples/dist/bundle.js
+examples/dist/bundle.js.map

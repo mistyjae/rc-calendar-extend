@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="jquery.min.js"></script>
+    <script src="jquery.rotate.min.js"></script>
+    <script type="text/javascript">
+        /**
+         * 从 file 域获取 本地图片 url
+         */
+        function getFileUrl(sourceId) {
+            var url;
+            if (navigator.userAgent.indexOf("MSIE") >= 1) { // IE
+                url = document.getElementById(sourceId).value;
+            } else if (navigator.userAgent.indexOf("Firefox") > 0) { // Firefox
+                url = window.URL.createObjectURL(document.getElementById(sourceId).files.item(0));
+            } else if (navigator.userAgent.indexOf("Chrome") > 0) { // Chrome
+                url = window.URL.createObjectURL(document.getElementById(sourceId).files.item(0));
+            }
+            return url;
+        }
+
+        /**
+         * 将本地图片 显示到浏览器上
+         */
+        function preImg(sourceId, targetId) {
+            var url = getFileUrl(sourceId);
+            var imgPre = document.getElementById(targetId);
+            imgPre.src = url;
+        }
+
+        function rotateImg(newNum) {
+            console.log("newNum", newNum);
+            let oldNum = $("#imgPre").getRotateAngle();
+            console.log("oldNum", oldNum[0]);
+            let resultNum = newNum;
+            if (oldNum.length > 0) {
+                resultNum = oldNum[0] + newNum;
+            }
+            if (resultNum >= 360 || resultNum <= -360) {
+                resultNum = 0;
+            }
+            console.log("resultNum", resultNum);
+            $("#imgPre").rotate({angle: resultNum});
+        }
+    </script>
+</head>
+<body>
+<form action="">
+    <input type="file" multiple="multiple" name="imgOne" id="imgOne" onchange="preImg(this.id,'imgPre');"/>
+    <input id="input2" type="button" value="逆时针" onclick="rotateImg(-90)"> </input>
+    <input id="input3" type="button" value="顺时针" onclick="rotateImg(90)"> </input>
+    <img id="imgPre" src="" style="display: block;"/>
+</form>
+</body>
+</html>
