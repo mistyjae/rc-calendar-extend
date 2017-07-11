@@ -28,7 +28,7 @@ module.exports = {
             test: /\.js$/,
             loaders: ['babel-loader'],
             include: [
-                    path.join(__dirname, 'src')
+                path.join(__dirname, './index.js')
             ]
         },
         {
@@ -44,14 +44,14 @@ module.exports = {
                 path.resolve(__dirname, 'node_modules')
             ],
             include: [
-                path.resolve(__dirname, 'src')
+                path.resolve(__dirname, './')
             ],
             loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader'
         },
         {
             test: /\.json$/,
             include: [
-                path.resolve(__dirname, 'src')
+                path.resolve(__dirname, './')
             ],
             loaders: ['json']
         },

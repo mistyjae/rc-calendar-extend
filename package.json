@@ -2,20 +2,12 @@
   "name": "rc-calendar-extend",
   "version": "0.1.0",
   "description": "日期扩展组件，包括年份选择和季度选择",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "clear": "rimraf node_modules",
     "build": "rimraf dist/* ./index.html && webpack -p --config ./webpack.production.config.js --progress --profile --colors",
     "watch_build": "rimraf dist/* ./index.html && webpack -p --watch --config ./webpack.production.config.js --progress --profile --colors",
-    "lang_combine": "babel-node ./script/lang/combineJson.js",
-    "lang_gen_xlsx": "babel-node ./script/lang/generateLangXlsx.js",
-    "translate": "babel-node ./script/lang/translate.js cp",
-    "gen_combine": "babel-node ./script/lang/combineJs.js cp",
-    "lang_gen_autotranslate_xlsx": "babel-node ./script/lang/autoTranslateRepeation.js",
-    "lang_rebuild": "npm run lang_combine && npm run lang_gen_xlsx && npm run lang_gen_autotranslate_xlsx",
-    "lang_rebuild_all": "npm run lang_combine && npm run lang_gen_xlsx && npm run lang_gen_autotranslate_xlsx && npm run lang_read_xlsx temp",
-    "lang_read_xlsx": "babel-node ./script/lang/readXlsx2Json.js",
-    "lint": "eslint  src/components ",
+    "lint": "eslint src/components ",
     "install_test": "cd test/peerDependencies && npm install",
     "test": "babel-node ./node_modules/karma/bin/karma start ./karma.conf.js ",
     "test:debug": "babel-node ./node_modules/karma/bin/karma start ./karma.conf.js --no-single-run ",
@@ -23,7 +15,7 @@
   },
   "license": "MIT",
   "files": [
-    "dist",
+    "lib",
     "README.md",
     "package.json"
   ],
@@ -94,8 +86,7 @@
   },
   "peerDependencies": {
     "react": "0.14.x || 15.x.x",
-    "react-dom": "0.14.x || 15.x.x",
-    "react-addons-update": "0.14.x || 15.x.x"
+    "react-dom": "0.14.x || 15.x.x"
   },
   "dependencies": {
     "babel-runtime": "^6.2.1",

@@ -46,6 +46,7 @@
   "dependencies": {
     "react": "^0.14.8",
     "react-addons-update": "^0.14.8",
-    "react-dom": "^0.14.8"
+    "react-dom": "^0.14.8",
+    "rc-calendar-extend": "^0.1.0"
   }
 }

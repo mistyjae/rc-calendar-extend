@@ -1,6 +1,3 @@
-/**
- * Created by hjx on 10/26/2015.
- */
 var path = require('path')
 var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -69,10 +66,6 @@ module.exports = {
             test: /\.(png|jpg|jpeg|gif|ico|cur)$/,
             loaders: [ 'url-loader' ]
         },
-        //{
-        //    test: /\.(woff|woff2|svg|eot|ttf)\??.*$/,
-        //    loader: 'file?name=./[hash].[ext]'
-        //}
         { test: /\.svg(\?t=[0-9]+)?$/, loader: 'url?limit=65000&mimetype=image/svg+xml' },
         { test: /\.woff(\?t=[0-9]+)?$/, loader: 'url?limit=65000&mimetype=application/font-woff' },
         { test: /\.woff2(\?t=[0-9]+)?$/, loader: 'url?limit=65000&mimetype=application/font-woff2' },
@@ -101,52 +94,6 @@ module.exports = {
             'commonjs2': 'react-dom',
             'amd': 'react-dom',
             'root': 'ReactDOM'
-        },
-        'react-redux': {
-            'commonjs': 'react-redux',
-            'commonjs2': 'react-redux',
-            'amd': 'react-redux'
-        },
-        'jquery': {
-            'commonjs': 'jquery',
-            'commonjs2': 'jquery',
-            'amd': 'jquery',
-            'root': 'jQuery'
-        },
-        'react-intl': {
-            'commonjs': 'react-intl',
-            'commonjs2': 'react-intl',
-            'amd': 'react-intl'
-        },
-        'react-addons-update': {
-            'commonjs': 'react-addons-update',
-            'commonjs2': 'react-addons-update',
-            'amd': 'react-addons-update'
-        },
-        'redux': {
-            'commonjs': 'redux',
-            'commonjs2': 'redux',
-            'amd': 'redux'
-        },
-        'redux-saga': {
-            'commonjs': 'redux-saga',
-            'commonjs2': 'redux-saga',
-            'amd': 'redux-saga'
-        },
-        'redux-saga/effects': {
-            'commonjs': 'redux-saga/effects',
-            'commonjs2': 'redux-saga/effects',
-            'amd': 'redux-saga/effects'
-        },
-        'immutable': {
-            'commonjs': 'immutable',
-            'commonjs2': 'immutable',
-            'amd': 'immutable'
-        },
-        'react-ace': {
-            'commonjs': 'react-ace',
-            'commonjs2': 'react-ace',
-            'amd': 'react-ace'
         }
     }
 }
