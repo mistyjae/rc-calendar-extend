@@ -7,6 +7,17 @@
 # 使用
 * 引用(详细例子参考examples/index.js)
 ```
+//开发环境 
+>cd examples
+>npm run dev
+
+//正式环境
+>npm run build
+>cd examples
+>npm run build
+>npm start
+```
+```
 import { YearCalendar, SeasonCalendar, DatePicker, zhCN, enUS } from 'rc-calendar-extend'
 
 render() {

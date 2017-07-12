@@ -1,6 +1,6 @@
 {
   "name": "rc-calendar-extend",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "日期扩展组件，包括年份选择和季度选择",
   "main": "lib/index.js",
   "scripts": {
