@@ -25,40 +25,40 @@ module.exports = {
     module: {
         loaders: [
             {
-            test: /\.js$/,
-            loaders: ['babel-loader'],
-            include: [
-                path.join(__dirname, './index.js')
-            ]
-        },
-        {
-            test: /\.css$/,
-            loaders: ['style-loader', 'css-loader'],
-            include: [
-                path.resolve(__dirname, 'node_modules')
-            ]
-        },
-        {
-            test: /\.css$/,
-            exclude: [
-                path.resolve(__dirname, 'node_modules')
-            ],
-            include: [
-                path.resolve(__dirname, './')
-            ],
-            loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader'
-        },
-        {
-            test: /\.json$/,
-            include: [
-                path.resolve(__dirname, './')
-            ],
-            loaders: ['json']
-        },
-        {
-            test: /\.(png|jpg|jpeg|gif|ico|cur)$/,
-            loaders: ['url-loader']
-        }
+                test: /\.js$/,
+                loaders: ['babel-loader'],
+                include: [
+                    path.join(__dirname, './index.js')
+                ]
+            },
+            {
+                test: /\.css$/,
+                loaders: ['style-loader', 'css-loader'],
+                include: [
+                    path.resolve(__dirname, 'node_modules')
+                ]
+            },
+            {
+                test: /\.css$/,
+                exclude: [
+                    path.resolve(__dirname, 'node_modules')
+                ],
+                include: [
+                    path.resolve(__dirname, './')
+                ],
+                loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader'
+            },
+            {
+                test: /\.json$/,
+                include: [
+                    path.resolve(__dirname, './')
+                ],
+                loaders: ['json']
+            },
+            {
+                test: /\.(png|jpg|jpeg|gif|ico|cur)$/,
+                loaders: ['url-loader']
+            }
         ]
     },
     postcss: function () {
